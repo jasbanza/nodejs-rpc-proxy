@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const axios = require('axios');
 const rateLimit = require('express-rate-limit');
 const dotenv = require('dotenv');
@@ -6,6 +7,10 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 const app = express();
+
+// Enable CORS for all routes
+app.use(cors());
+
 const PORT = process.env.PORT || 9604;
 
 // Rate limiting middleware
