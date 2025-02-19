@@ -36,6 +36,10 @@ app.post('/rpc', checkSecretKey, async (req, res) => {
   try {
     const { method, params, id, jsonrpc } = req.body;
     
+    console.log('method:', method);
+    console.log('params:', params);
+    console.log('id:', id);
+    console.log('jsonrpc:', jsonrpc);
     // Assuming the RPC server is at this URL
     const response = await axios.post(req.headers['x-rpc-server'], {
       jsonrpc: jsonrpc || '2.0',
